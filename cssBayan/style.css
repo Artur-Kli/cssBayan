@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.wrapper {
+  max-width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+.title {
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+.accordion-tab {
+  margin-bottom: 8px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.18);
+}
+
+.wrapper .accordion-tab label {
+  display: flex;
+  padding: 10px 20px;
+  border-radius: 3px;
+  background: tomato;
+  cursor: pointer;
+}
+
+.wrapper .accordion-tab label:hover {
+  background: rgb(224, 64, 35);
+}
+
+.wrapper label span{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+
+.wrapper .accordion-tab .content {
+  text-align: center;
+  max-height: 0px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 0 0 3px 3px;
+  transition: all 0.4s ease;
+}
+
+.wrapper .accordion-tab .content img {
+  max-width: 80%;
+}
+
+input[type="checkbox"]{
+  display: none;
+}
+
+.accordion-tab input[type="checkbox"]:checked ~ .content {
+  max-height: 100%;
+}
