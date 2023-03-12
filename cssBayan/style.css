@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.wrapper {
+  max-width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+.title {
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+.accordion-tab {
+  margin-bottom: 8px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.18);
+}
+
+.wrapper .accordion-tab label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-radius: 3px;
+  background: tomato;
+  cursor: pointer;
+}
+
+.wrapper .accordion-tab:hover label{
+  background: rgb(224, 64, 35);
+  transition: 0.3s ease-in-out;
+}
+
+.wrapper label span{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.material-symbols-outlined{
+  opacity: 0;
+}
+
+.wrapper:hover .material-symbols-outlined{
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.wrapper .accordion-tab .content {
+  opacity: 0;
+  text-align: center;
+  max-height: 0px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 0 0 3px 3px;
+  transition: all 0.4s ease;
+}
+
+.wrapper .accordion-tab .content img {
+  max-width: 60%;
+}
+
+input[type="checkbox"]{
+  display: none;
+}
+
+.accordion-tab input[type="checkbox"]:checked ~ .content {
+  opacity: 1;
+  max-height: 100%;
+  transition: all 0.4s ease;
+}
+
+.accordion-tab input[type="checkbox"]:checked ~ label .open{
+  display: none;
+}
+
+.accordion-tab input[type="checkbox"]:not(:checked) ~ label .close{
+  display: none;
+}
+
+.accordion-tab:hover input[type="checkbox"] ~ .content {
+  max-height: 100%;
+  transition: all 1s ease-in-out;
+  opacity: 1;
+}
